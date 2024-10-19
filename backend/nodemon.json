@@ -1,0 +1,4 @@
+{
+	"exec": "ts-node --esm server.ts",
+	"watch": ["*.ts", "*.json"]
+}
