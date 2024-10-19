@@ -1,0 +1,10 @@
+services:  
+  postgres:
+    image: postgres:15-alpine
+    
+    ports:
+      - 5436:5432
+    environment:
+      POSTGRES_DB: poll-maker
+
+      POSTGRES_HOST_AUTH_METHOD: trust
