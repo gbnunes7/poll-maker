@@ -1,4 +1,4 @@
-import QuestionController from "controllers/question";
+import QuestionController from "controllers/questionController";
 import routes from "./questionaryRoutes";
 import { Request, Response } from "express";
 
@@ -30,3 +30,4 @@ routes.delete(
 routes.post("/question/new", async (req: Request, res: Response) => {
 	await questionController.create(req, res);
 });
+
