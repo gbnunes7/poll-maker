@@ -1,5 +1,5 @@
 import Controller from ".";
-import QuestionaryServices from "../services/questionary";
+import QuestionaryServices from "../services/questionaryServices";
 
 const questionaryServices = new QuestionaryServices();
 
