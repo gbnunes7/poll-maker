@@ -1,5 +1,5 @@
 import Controller from ".";
-import QuestionServices from "services/question";
+import QuestionServices from "services/questionServices";
 
 const questionServices = new QuestionServices();
 
