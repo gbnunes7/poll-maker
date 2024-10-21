@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import QuestionaryController from "../controllers/questionary";
+import QuestionaryController from "../controllers/questionaryController";
 
 export const routes = express.Router();
 const questionaryController = new QuestionaryController();
