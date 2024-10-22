@@ -31,3 +31,4 @@ routes.post("/question/new", async (req: Request, res: Response) => {
 	await questionController.create(req, res);
 });
 
+export default routes
