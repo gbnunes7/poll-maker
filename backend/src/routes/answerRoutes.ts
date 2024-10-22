@@ -23,3 +23,5 @@ routes.put("/answer/update/id/:id", async (req: Request, res: Response) => {
 routes.delete("/answer/delete/id/:id", async (req: Request, res: Response) => {
 	await answerController.delete(req, res);
 });
+
+export default routes
