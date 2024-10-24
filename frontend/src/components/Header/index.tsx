@@ -4,10 +4,10 @@ import Button from "../Button";
 
 const Header: React.FC = () => {
 	return (
-		<div className="h-24 bg-white w-full border-b-[1px] flex items-center px-32 justify-between">
-			<img src={logo} alt="Poll Maker logo" className="w-36" />
+		<header className="px-4 md:h-24 bg-white w-full border-b-[1px] flex items-center md:px-32 justify-between">
+			<img src={logo} alt="Poll Maker logo" className="md:w-36 w-24" />
 			<nav>
-				<ul className="flex gap-4 font-semibold">
+				<ul className="md:flex hidden gap-4 font-semibold">
 					<li>
 						<Link to="/" aria-label="Home">
 							Home
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
 					</li>
 				</ul>
 			</nav>
-			<div className="flex gap-4">
+			<div className="md:flex hidden gap-4">
 				<Link to={"/login"} aria-label="Login">
 					<Button
 						ariaLabel="Login button"
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
 					</Button>
 				</Link>
 			</div>
-		</div>
+		</header>
 	);
 };
 
