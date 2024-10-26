@@ -3,6 +3,7 @@ import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
 import FixedLayout from "../components/FixedLayout";
 import Home from "../pages/Home";
+import NewPollPage from "../pages/NewPool";
 
 function App() {
 	return (
@@ -11,7 +12,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<FixedLayout />}>
 						<Route path="/" element={<Home />} />
-						<Route path="/newpoll" element={<Home />} />
+						<Route path="/newpoll" element={<NewPollPage />} />
 						<Route path="/mypolls" element={<Home />} />
 					</Route>
 					<Route path="/login" element={<LoginPage />} />
