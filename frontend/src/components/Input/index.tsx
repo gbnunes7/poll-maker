@@ -15,10 +15,11 @@ interface InputProps {
 	autoComplete?: string;
 	pattern?: string;
     minLength?: number;
+	ref?: React.Ref<HTMLInputElement>;
 }
 
 const Input: React.FC<InputProps> = ({ ...rest }) => {
-	return <input {...rest} />;
+	return <input ref={rest.ref} {...rest} />;
 };
 
 export default Input;
