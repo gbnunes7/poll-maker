@@ -1,14 +1,15 @@
-interface ButtonProps {
-	children: React.ReactNode;
-	className?: string;
-	onClick?: () => void;
-	type?: "button" | "submit" | "reset";
-	disabled?: boolean;
-	ariaLabel?: string;
-}
+import React from 'react';
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
-	return <button {...rest}>{children}</button>;
-};
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, ...props }, ref) => (
+    <button ref={ref} {...props}>
+      {children}
+    </button>
+  )
+);
+
+Button.displayName = 'Button';
 
 export default Button;
