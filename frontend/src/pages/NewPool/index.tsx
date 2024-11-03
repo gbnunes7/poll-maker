@@ -7,9 +7,8 @@ import MainContainer from "../../components/MainContainer";
 import SectionContainer from "../../components/SectionContainer";
 import Title from "../../components/Title";
 import Button from "../../components/Button";
-import QuestionItem from "./../../components/QuestionItem"; // Ajuste o caminho conforme necessário
+import QuestionItem from "./../../components/QuestionItem"; 
 
-// Definindo o esquema com Zod
 const answerSchema = z.object({
 	answer: z.string().min(1, "Answer is required"),
 	correct: z.boolean(),
@@ -46,13 +45,11 @@ const NewPollPage: React.FC = () => {
 		},
 	});
 
-	// `useFieldArray` para gerenciar a lista de perguntas
 	const { fields: questionFields, append: appendQuestion } = useFieldArray({
 		control,
 		name: "questions",
 	});
 
-	// Adiciona uma nova pergunta com uma resposta vazia
 	const addQuestion = () => {
 		appendQuestion({
 			question: "",
