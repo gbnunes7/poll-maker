@@ -7,6 +7,6 @@ class AnswerController extends Controller {
 	constructor() {
 		super(answerServices);
 	}
-}
+} //teste
 
 export default AnswerController;
