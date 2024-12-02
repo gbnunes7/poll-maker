@@ -21,32 +21,30 @@ model User {
   updatedAt  DateTime @updatedAt
 }
 
-model Question {
-  id            Int      @id @default(autoincrement())
-  question      String
-  answers       Answer[] 
-  correctAnswer String?  
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  questionary   Questionary[] 
+model Questionary {
+  id         Int        @id @default(autoincrement())
+  title      String
+  questions  Question[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
 }
 
-model Questionary {
-  id         Int       @id @default(autoincrement())
-  title      String    
-  questions  Question[] 
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+model Question {
+  id            Int        @id @default(autoincrement())
+  question      String
+  questionaryId Int
+  questionary   Questionary @relation(fields: [questionaryId], references: [id], onDelete: Cascade)
+  answers       Answer[]
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
 }
 
 model Answer {
-  id          Int       @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   answer      String
   isCorrect   Boolean
-  questionId  Int       
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-
-  question    Question   @relation(fields: [questionId], references: [id]) 
+  questionId  Int
+  question    Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
