@@ -34,6 +34,11 @@ class Services {
 		//@ts-ignore
 		return await db[this.model].update({ where: { id: id }, data: data });
 	}
+
+	async getByQuestionaryId(id: number) {
+		//@ts-ignore
+		return await db[this.model].findMany({ where: { questionaryId: id } });
+	}
 }
 
 export default Services;
